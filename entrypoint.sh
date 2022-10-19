@@ -9,6 +9,10 @@ if [ -z "${FIREBASE_PROJECT}" ]; then
     echo "FIREBASE_PROJECT is missing"
     exit 1
 fi
+if [ -z "${FIREBASE_ENVIRONMENT}" ]; then
+    firebase use ${FIREBASE_ENVIRONMENT}
+    exit 1
+fi
 if [ -z "${FIREBASE_ONLY_HOSTING}" == "true" ]; then
     firebase deploy \
     -m "${GITHUB_REF} (${GITHUB_SHA})" \
