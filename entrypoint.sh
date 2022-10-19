@@ -10,7 +10,7 @@ if [ -z "${FIREBASE_PROJECT}" ]; then
     exit 1
 fi
 if [ -z "${FIREBASE_ENVIRONMENT}" ]; then
-    firebase use ${FIREBASE_ENVIRONMENT}
+    firebase use ${FIREBASE_ENVIRONMENT} --project ${FIREBASE_PROJECT}
     exit 1
 fi
 if [ -z "${FIREBASE_ONLY_HOSTING}" == "true" ]; then
