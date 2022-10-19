@@ -11,7 +11,7 @@ if [ -z "${FIREBASE_PROJECT}" ]; then
 fi
 if [ ! -z "${FIREBASE_ENVIRONMENT}" ]; then
     echo "Using environment ${FIREBASE_ENVIRONMENT}"
-    firebase use ${FIREBASE_ENVIRONMENT} --project ${FIREBASE_PROJECT}
+    firebase use ${FIREBASE_ENVIRONMENT}
 fi
 if [ ! -z "${FIREBASE_ONLY_HOSTING}" == "true" ]; then
     firebase deploy \
